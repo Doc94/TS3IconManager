@@ -39,4 +39,9 @@ include './data/config.php';
 	</div>
 </div>
 </body>
+<footer>
+<center>
+<p class="text-capitalize">Script hecho por <a href="http://twitter.com/MrDoc94">Doc</a> | Mediante la <a href="https://docs.planetteamspeak.com/ts3/php/framework/">TS3API</a></p>
+</center>
+</footer>
 </html>
