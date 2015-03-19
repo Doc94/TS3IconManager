@@ -59,11 +59,11 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
                 
                 if($estaengrupo) {
                     $iconosm = $iconosm + 1;
-                    echo '<li><img src="./iconos/'.$group['id']. '.png" alt="" />  ';
-                    echo '<input type=checkbox name=grupos['.$group["id"].'] id="'.$group["id"].'" value="'. $group["id"] .'"class="icono" checked >'.$group["name"].'<br>';
+                    echo '<label><li><img src="./iconos/'.$group['id']. '.png" alt="" />  ';
+                    echo '<input type=checkbox name=grupos['.$group["id"].'] id="'.$group["id"].'" value="'. $group["id"] .'"class="icono" checked >'.$group["name"].'</label><br/>';
                 } else {
-                    echo '<li><img src="./iconos/'. $group['id'] . '.png" alt="" />  ';
-                    echo '<input type=checkbox name=grupos['.$group["id"].'] id="'. $group["id"] .'" value="'. $group["id"] .'" class="icono"> '.$group["name"].'<br>';
+                    echo '<label><li><img src="./iconos/'. $group['id'] . '.png" alt="" />  ';
+                    echo '<input type=checkbox name=grupos['.$group["id"].'] id="'. $group["id"] .'" value="'. $group["id"] .'" class="icono"> '.$group["name"].'</label><br/>';
                 }           
             }
 			echo "<br/><button type='submit' class='btn btn-default'>Guardar</button>";
