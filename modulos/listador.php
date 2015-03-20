@@ -2,7 +2,7 @@
 /*
 *************************************************
 /				Autor: Pedro Arenas (Doc)		/
-/				Archivo: iconizador.php			/
+/				Archivo: listador.php			/
 /				Modulo: Lista los grupos/icons	/
 *************************************************
 */
@@ -72,6 +72,10 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
             if($conectado == False) {
             echo "<br><b>ERROR:</b> Debes estar conectado al ts para seguir<br>";
             }
+        }
+        
+        function ListarIconos($sucode) {
+        	//Funcion de listar que identificara el codigo
         }
         
     } catch(Exception $e) {
