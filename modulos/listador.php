@@ -2,7 +2,7 @@
 /*
 *************************************************
 /				Autor: Pedro Arenas (Doc)		/
-/				Archivo: iconizador.php			/
+/				Archivo: listador.php			/
 /				Modulo: Lista los grupos/icons	/
 *************************************************
 */
