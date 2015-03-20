@@ -22,7 +22,7 @@ include './data/config.php'; //Importamos la configuracion
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script type="text/javascript" src="noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+<script type="text/javascript" src="noty/js/packaged/jquery.noty.packaged.min.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@ include './data/config.php'; //Importamos la configuracion
 				<div class="panel-heading">
 					<h3 class="panel-title" style="height: 16px;">Panel de iconos | TS3</h3>
 				</div>
-				<div class="panel-body" style="width: 300px;" align=left>
+				<div class="panel-body" style="width: 550px;" align=left>
 					<?php include './modulos/listador.php'; //Importamos el codigo a usar ?>
 				</div>
 			</div>

@@ -8,10 +8,10 @@
  
 /* Configuracion de conexion query hacia TS3 */
 
-$HOST_QUERY = "IP"; //HOST:QUERY_PORT Que usa tu servidor de ts3
-$PORT_QUERY = "10011"; //Default Query
-$USER_QUERY = "USER"; //Usuario de conexion a query
-$PASS_QUERY = "MICLAVE"; //Clave generada para a conexion query
+$HOST_QUERY = "131.221.33.40"; //HOST:QUERY_PORT Que usa tu servidor de ts3
+$PORT_QUERY = "10011"; //Puerto de query por default es 10011
+$USER_QUERY = "USERQUERY"; //Usuario de conexion a query
+$PASS_QUERY = "CLAVEQUERY"; //Clave generada para a conexion query
 $SERVER_PORT = "9977"; //Puerto del servidor ts3
 
 

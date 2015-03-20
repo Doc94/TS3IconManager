@@ -11,23 +11,27 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
         $client_uid = $_SESSION['client_uid'];
 		$grupos = $_SESSION['grupos'];
 		$client_db = $_SESSION['client_db'];
-      
+		$codigo = $_SESSION['codigo'];
+		$i_code = $_POST["i_code"];
        
     try {
         
         $connect = "serverquery://".$USER_QUERY.":".$PASS_QUERY."@".$HOST_QUERY.":".$PORT_QUERY."/?server_port=".$SERVER_PORT."";
         $ts3_VirtualServer = TeamSpeak3::factory($connect);
         $ts3_VirtualServer->execute("clientupdate", array("client_nickname" => $NICK_QUERY));
-        $client = $ts3_VirtualServer->clientGetByUid($client_uid);
-        $userlist = $ts3_VirtualServer->clientList();      
+        $client = $ts3_VirtualServer->clientGetByUid($client_uid);     
         echo "ID obtenida: ".$client_uid."<br>";
-        $proceder = True;
-        $conectado = False;
         
 		echo "Ultimo nombre usado: ".$client["client_nickname"]."<br>";
         echo "Procesando el sistema <br>";
 		
-        $data = $_POST["grupos"];
+        $n_grupos = $_POST["grupos"];
+		
+		if($i_code != $codigo) {
+			echo "<p>El codigo ingresado no es correcto!</p><br/>";
+			header("refresh: 10; url = ./"); 
+			die;
+		}
 		try {
 			foreach($grupos as $group) {			
 				$needle = $group['id'];
@@ -38,7 +42,7 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
                         $estaengrupo = True; 
                     }                                   
                 }
-				if(in_array($needle,$data)) {
+				if(in_array($needle,n_grupos)) {
 					if($estaengrupo == False) {
 						$ts3_VirtualServer->serverGroupClientAdd($group["id"],$client_db);
 					}

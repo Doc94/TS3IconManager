@@ -17,23 +17,31 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
         $connect = "serverquery://".$USER_QUERY.":".$PASS_QUERY."@".$HOST_QUERY.":".$PORT_QUERY."/?server_port=".$SERVER_PORT."";
         $ts3_VirtualServer = TeamSpeak3::factory($connect);
         $ts3_VirtualServer->execute("clientupdate", array("client_nickname" => $NICK_QUERY));
-        $client = $ts3_VirtualServer->clientGetByUid($client_uid);
-        $userlist = $ts3_VirtualServer->clientList();      
+        $client = $ts3_VirtualServer->clientGetByUid($client_uid);   
         echo "ID obtenida: ".$client_uid."<br>";
         $proceder = True;
         $conectado = False;
 		$_SESSION['client_db'] = $client["client_database_id"];
+		
+		
 
-        echo "Ultimo nombre usado: ".$client["client_nickname"]."<br>";
-        echo "Procesando el sistema <br>";
+        if($client["client_nickname"] ==  $NICK_QUERY) {
+            echo "Ultimo nombre usado: NO DISPONIBLE<br>";
+            $proceder = False;
+        } else {
+            echo "Ultimo nombre usado: ".$client["client_nickname"]."<br>";
+            $conectado = True;
+        }
+        echo "Procesando el sistema <br/><br/>";
         
+		
+		
+		
             
         if($proceder == True) {
             echo "<form name='formulario' method='POST' action='iconizar.php'>";
             
             $iconosm = 0;
-            $grupos_out = array();
-            $grupos_in = array();
             
             $server_groups = $ts3_VirtualServer->serverGroupList();
             $servergroups = array();
@@ -60,17 +68,25 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
                 if($estaengrupo) {
                     $iconosm = $iconosm + 1;
                     echo '<li><img src="./iconos/'.$group['id']. '.png" alt="" />  ';
-                    echo '<input type=checkbox name=grupos['.$group["id"].'] id="'.$group["id"].'" value="'. $group["id"] .'"class="icono" checked >'.$group["name"].'<br>';
+                    echo '<label><input type=checkbox name=grupos['.$group["id"].'] id="'.$group["id"].'" value="'. $group["id"] .'"class="icono" checked >'.$group["name"].'</label><br>';
                 } else {
                     echo '<li><img src="./iconos/'. $group['id'] . '.png" alt="" />  ';
-                    echo '<input type=checkbox name=grupos['.$group["id"].'] id="'. $group["id"] .'" value="'. $group["id"] .'" class="icono"> '.$group["name"].'<br>';
+                    echo '<label><input type=checkbox name=grupos['.$group["id"].'] id="'. $group["id"] .'" value="'. $group["id"] .'" class="icono"> '.$group["name"].'</label><br>';
                 }           
             }
+			$codigo = RandomString();
+			$_SESSION['codigo'] = $codigo;
+			$mensaje = "Este es tu codigo de verificacion: ".$codigo." ";
+			$client->poke($mensaje);
+			
+			echo "<br/><p>Se ha generado un codigo de confirmacion via TS3 favor ingresar para autorizar el proceso.</p>";
+			echo "<input type=text name='i_code' placeholder='Codigo'><br/>";
 			echo "<br/><button type='submit' class='btn btn-default'>Guardar</button>";
             //echo "<input type=submit value='Guardar'><br></FORM>";
         } else {
             if($conectado == False) {
-            echo "<br><b>ERROR:</b> Debes estar conectado al ts para seguir<br>";
+				header("refresh: 10; url = ./"); 
+				echo "<br><b>ERROR:</b> Debes estar conectado al ts para seguir<br>";
             }
         }
         
@@ -99,5 +115,14 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
         
     }
         
-    //$servergroups[] = array('name' => (string)$group, 'id' => $group->sgid, 'type' => $group->type); 
+    function RandomString() {
+		$an = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-)(.:,;";
+		$su = strlen($an) - 1;
+    return substr($an, rand(0, $su), 1) .
+            substr($an, rand(0, $su), 1) .
+            substr($an, rand(0, $su), 1) .
+            substr($an, rand(0, $su), 1) .
+            substr($an, rand(0, $su), 1) .
+            substr($an, rand(0, $su), 1);
+	}
 ?>
