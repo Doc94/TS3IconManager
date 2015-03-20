@@ -3,7 +3,7 @@
 *************************************************
 /				Autor: Pedro Arenas (Doc)		/
 /				Archivo: listador.php			/
-/				Modulo: Lista los grupos/icons	/
+/				Modulo: Lista los grupos/iconos	/
 *************************************************
 */
 require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS3
