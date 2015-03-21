@@ -2,6 +2,18 @@
 Manejo de rangos de ts mediande UID
 Este pequeño script usa Bootstrap y el Framework de TS3PHP, este script permite poder asignarse rangos (basado en el sort_id de los rangos en ts) en base a una UID 
 
+# Funciones
+
+-Asignar iconos usando UID
+
+-Listado de iconos segun el SORT_ID
+
+-Confirmacion via codigo enviado por POKE en ts3
+
+-Asignacion limpia y ahorrando recursos de la conexion query
+
+-Registro de los cambios realizados (Aun No...)
+
 # Instalacion
 Solo debes editar el archivo (data/config.php) para poder usar el script sin ningun problema.
 
@@ -20,4 +32,6 @@ A continuacion se lista los permisos que debe tener la cuenta usada en la conexi
 -i_group_member_add_power || Poder para añadir a un miembro
 
 -i_group_member_remove_power || Poder para remover a un miembro
+
+-i_client_poke_power || Poder para enviar poke
 
