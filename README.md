@@ -20,6 +20,12 @@ Solo debes editar el archivo (data/config.php) para poder usar el script sin nin
 # Sync de iconos
 Este script tiene en la carpeta de "iconos" un archivo PHP el cual debes ejecutar periodicamente segun edites uno u otro rango ya que para ahorrar recursos y para evitar un posible "Banned From Query" los iconos no se descargan automaticamente a menos que se ejecute cada cierto tiempo el archivo geticonos.php
 
+# Changelog
+[V 1.2]
+-Areglado un warning en ./modulos/iconizar.php el cual al no haber cambios intentaba tomar una variable null
+-Añadido sistema de confirmacion via codigo enviado por poke en ts
+-Correcciones ligeras de codigo
+
 # Permisos de la conexion query
 A continuacion se lista los permisos que debe tener la cuenta usada en la conexion query.
 
