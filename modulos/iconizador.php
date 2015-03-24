@@ -23,10 +23,16 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
         echo "ID obtenida: ".$client_uid."<br>";
         
 		echo "Ultimo nombre usado: ".$client["client_nickname"]."<br>";
-        echo "Procesando el sistema <br>";
+        echo "Procesando el sistema <br/><br/>";
 		
-        $n_grupos = $_POST["grupos"];
-		
+        
+		if(empty($_POST["grupos"])) {
+			echo "<p><b>No hay cambios que hacer.</b></p><br/>";
+			header("refresh: 10; url = ./"); 
+			die;
+		} else {
+			$n_grupos = $_POST["grupos"];
+		}
 		if($i_code != $codigo) {
 			echo "<p>El codigo ingresado no es correcto!</p><br/>";
 			header("refresh: 10; url = ./"); 
@@ -42,7 +48,7 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
                         $estaengrupo = True; 
                     }                                   
                 }
-				if(in_array($needle,n_grupos)) {
+				if(in_array($needle,$n_grupos)) {
 					if($estaengrupo == False) {
 						$ts3_VirtualServer->serverGroupClientAdd($group["id"],$client_db);
 					}
