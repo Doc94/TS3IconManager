@@ -22,9 +22,9 @@ Este script tiene en la carpeta de "iconos" un archivo PHP el cual debes ejecuta
 
 # Changelog
 [V 1.2]
--Areglado un warning en ./modulos/iconizar.php el cual al no haber cambios intentaba tomar una variable null
--Añadido sistema de confirmacion via codigo enviado por poke en ts
--Correcciones ligeras de codigo
+-Areglado un warning en ./modulos/iconizar.php el cual al no haber cambios intentaba tomar una variable null.
+-Añadido sistema de confirmacion via codigo enviado por poke en ts.
+-Correcciones ligeras de codigo.
 
 # Permisos de la conexion query
 A continuacion se lista los permisos que debe tener la cuenta usada en la conexion query.
