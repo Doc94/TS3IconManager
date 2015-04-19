@@ -1,8 +1,10 @@
 <?php
-  require_once("libraries/TeamSpeak3/TeamSpeak3.php");
-  include './data/config.php';
  
   try {
+	  
+	require_once("../libraries/TeamSpeak3/TeamSpeak3.php");
+	include '../data/config.php';  
+	echo "Conectando al servidor TeamSpeak</br>";
     $connect = "serverquery://".$USER_QUERY.":".$PASS_QUERY."@".$HOST_QUERY.":".$PORT_QUERY."/?server_port=".$SERVER_PORT."";
 	$ts3_VirtualServer = TeamSpeak3::factory($connect);
     // Conseguimos array con los grupos
@@ -14,11 +16,12 @@
         $servergroups[] = array('name' => (string)$group, 'id' => $group->sgid, 'type' => $group->type, 'icon' => $group->iconDownload() );
         }
     }  
+	echo "Iniciando Descarga de iconos...</br>";
     // Iteramos por grupo para guardar a archivo
     foreach($servergroups as $group) {
         // ya estaba descargada la wea xD
-        file_put_contents("./" . $group['id'] . ".png", $group['icon']);
-        echo "Archivo iconos/" . $group['id'] . ".png" . "creado para el grupo " . $group['name'] . "<br>";
+        file_put_contents("./icons/" . $group['id'] . ".png", $group['icon']);
+        echo "Archivo iconos/icons/" . $group['id'] . ".png" . " Creado para el grupo " . $group['name'] . "<br>";
        
     }
  
@@ -29,6 +32,7 @@
 			echo "[DEBUG] Mensaje de error DEBUG: ".$e->getMessage()."<br>";
 			echo "[DEBUG] El codigo de error fue ".$e->getCode()."<br>";
 		}
+		echo "ERROR: ".$e->getMessage();
 		if($e->getCode() == 0) {
 			echo "Error desconocido. Metodo invalido";
 		} else if($e->getCode() == 10060) { //Codigo de error de error en la conexion

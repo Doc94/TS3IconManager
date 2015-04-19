@@ -41,7 +41,7 @@ include './data/config.php';
 </body>
 <footer>
 <center>
-<p class="text-capitalize">Script hecho por <a href="http://twitter.com/MrDoc94">Doc</a> | Mediante la <a href="https://docs.planetteamspeak.com/ts3/php/framework/">TS3API</a></p>
+<p class="text-capitalize">Script hecho por <a href="http://twitter.com/MrDoc94">Doc</a> | Mediante la <a href="https://docs.planetteamspeak.com/ts3/php/framework/">TS3API</a> | SourceCode en <a href="https://github.com/Doc94/TS3IconManager">GitHub</a></p>
 </center>
 </footer>
 </html>
