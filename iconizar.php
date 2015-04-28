@@ -6,6 +6,7 @@
 *************************************************
 */
 include './data/config.php';
+include './lang/loadlang.php';
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -29,7 +30,7 @@ include './data/config.php';
 		<center>
 		<div class="panel panel-primary" style="width: 300px;">
 			<div class="panel-heading">
-				<h3 class="panel-title" style="height: 16px;">Panel de iconos | TS3</h3>
+				<h3 class="panel-title" style="height: 16px;">$lang['i_title']</h3>
 			</div>
 			<div class="panel-body" style="width: 300px;">
 				<?php include './modulos/iconizador.php'; //Importamos el codigo a usar ?>

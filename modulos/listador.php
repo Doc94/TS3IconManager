@@ -6,6 +6,7 @@
 /				Modulo: Lista los grupos/iconos	/
 *************************************************
 */
+include './lang/loadlang.php';
 require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS3
         session_start();
         $_SESSION['client_uid'] = $_POST['uniid'];
@@ -16,9 +17,9 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
         
         $connect = "serverquery://".$USER_QUERY.":".$PASS_QUERY."@".$HOST_QUERY.":".$PORT_QUERY."/?server_port=".$SERVER_PORT."";
         $ts3_VirtualServer = TeamSpeak3::factory($connect);
-        $ts3_VirtualServer->execute("clientupdate", array("client_nickname" => $NICK_QUERY));
+        $ts3_VirtualServer->selfUpdate(array('client_nickname'=>$NICK_QUERY));
         $client = $ts3_VirtualServer->clientGetByUid($client_uid);   
-        echo "ID obtenida: ".$client_uid."<br>";
+        echo $lang['l_idt'].": ".$client_uid."<br>";
         $proceder = True;
         $conectado = False;
 		$_SESSION['client_db'] = $client["client_database_id"];
@@ -26,13 +27,13 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
 		
 
         if($client["client_nickname"] ==  $NICK_QUERY) {
-            echo "Ultimo nombre usado: NO DISPONIBLE<br>";
+            echo $lang['l_lastname'].": NO DISPONIBLE<br>";
             $proceder = False;
         } else {
-            echo "Ultimo nombre usado: ".$client["client_nickname"]."<br>";
+            echo $lang['l_lastname'].": ".$client["client_nickname"]."<br>";
             $conectado = True;
         }
-        echo "Procesando el sistema <br/><br/>";
+        echo $lang['load']."<br/><br/>";
         
 		
 		
@@ -67,56 +68,56 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
                 
                 if($estaengrupo) {
                     $iconosm = $iconosm + 1;
-                    echo '<li><img src="./iconos/'.$group['id']. '.png" alt="" />  ';
+                    echo '<li><img src="./iconos/icons/'.$group['id']. '.png" alt="" />  ';
                     echo '<label><input type=checkbox name=grupos['.$group["id"].'] id="'.$group["id"].'" value="'. $group["id"] .'"class="icono" checked >'.$group["name"].'</label><br>';
                 } else {
-                    echo '<li><img src="./iconos/'. $group['id'] . '.png" alt="" />  ';
+                    echo '<li><img src="./iconos/icons/'. $group['id'] . '.png" alt="" />  ';
                     echo '<label><input type=checkbox name=grupos['.$group["id"].'] id="'. $group["id"] .'" value="'. $group["id"] .'" class="icono"> '.$group["name"].'</label><br>';
                 }           
             }
 			$codigo = RandomString();
 			$_SESSION['codigo'] = $codigo;
-			$mensaje = "Este es tu codigo de verificacion: ".$codigo." ";
+			$mensaje = $lang['l_checkmsg'].": ".$codigo." ";
 			$client->poke($mensaje);
 			
-			echo "<br/><p>Se ha generado un codigo de confirmacion via TS3 favor ingresar para autorizar el proceso.</p>";
+			echo "<br/><p>".$lang['l_checkalert']."</p>";
 			echo "<input type=text name='i_code' placeholder='Codigo'><br/>";
-			echo "<br/><button type='submit' class='btn btn-default'>Guardar</button>";
+			echo "<br/><button type='submit' class='btn btn-default'>".$lang['l_save']."</button>";
             //echo "<input type=submit value='Guardar'><br></FORM>";
         } else {
             if($conectado == False) {
 				header("refresh: 10; url = ./"); 
-				echo "<br><b>ERROR:</b> Debes estar conectado al ts para seguir<br>";
+				echo "<br><b>ERROR:</b> ".$lang['f_connect']."<br>";
             }
         }
         
     } catch(Exception $e) {
 		echo "ERROR: ";
         if($DEBUG == True) {
-            echo "[DEBUG] Ha ocurrido un error inesperado <br>";
-            echo "[DEBUG] Mensaje de error DEBUG: ".$e->getMessage()."<br>";
-            echo "[DEBUG] El codigo de error fue ".$e->getCode()."<br>";
+            echo "[DEBUG] ".$lang['f_derrortitle']." <br>";
+            echo "[DEBUG] ".$lang['f_dmsg'].": ".$e->getMessage()."<br>";
+            echo "[DEBUG] ".$lang['f_dcode']." ".$e->getCode()."<br>";
         }
         if($e->getCode() == 0) {
-            echo "Error desconocido. Metodo invalido";
+            echo $lang['f_unk'];
         } else if($e->getCode() == 10060) { //Codigo de error de error en la conexion
-                    echo "No se pudo conectar con el servidor de teamspeak 3";
+                    echo $lang['f_connectts'];
         } else if($e->getCode() == 512) { //Codigo de error cuando la UUID no es valida
-                    echo "La UUID ingresada no es valida o no esta actualmente conectada al ts3";
+                    echo $lang['f_uuid'];
         } else if($e->getCode() == 520) { //Codigo de error cuando login o pass estan mal
-                    echo "Los datos de acceso query no son correctos";
+                    echo $lang['f_querydata'];
         } else if($e->getCode() == 3329) { //Codigo de error cuando la conexion fue baneada por el tsquery
-                    echo "La conexion fue baneada por query. Intenta mas tarde";
+                    echo $lang['f_banned'];
         } else if($e->getCode() == 513) { //Codigo de error cuando ya hay una conexion del nombre
-                    echo "Alguien esta usando esta UUID en este momento. Intente mas tarde.";
+                    echo $lang['f_twoconnect'];
         } else if($e->getCode() == 2568) { //Codigo de error cuando ya hay una conexion del nombre
-                    echo "La conexion query no tiene permisos de realizar una de las acciones del script.";
+                    echo $lang['f_perms'];
         }
         
     }
         
     function RandomString() {
-		$an = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-)(.:,;";
+		$an = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ%$#";
 		$su = strlen($an) - 1;
     return substr($an, rand(0, $su), 1) .
             substr($an, rand(0, $su), 1) .

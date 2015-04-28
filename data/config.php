@@ -19,6 +19,8 @@ $SERVER_PORT = "9977"; //Puerto del servidor ts3
 
 $NAME_TITLE = 'Manager TS3'; //Titulo principal de la web
 
+$IDIOMA = "ES"; // (Options: en, es) Idioma de ejecucion 
+
 $SID_GROUP = 71; //SORT_ID del grupo que sera listado
 
 $NICK_QUERY = "AdminSystem"; //Nickname de la conexion query

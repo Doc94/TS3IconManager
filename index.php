@@ -6,6 +6,7 @@
 *************************************************
 */
 include './data/config.php';
+include './lang/loadlang.php';
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -30,16 +31,16 @@ include './data/config.php';
 		<center>
 		<div class="panel panel-primary" style="width: 300px;">
 			<div class="panel-heading">
-				<h3 class="panel-title" style="height: 16px;">Panel de iconos | TS3</h3>
+				<h3 class="panel-title" style="height: 16px;"><?php echo $lang['i_title'];?></h3>
 			</div>
 			<div class="panel-body" style="width: 300px;">
 				<form role="form" name="formulario"method="POST"action="procesar.php">
-					Ingrese su UID (UniqueID) de TS3 para poder asignarse rangos.<br/><br/>
+					<?php echo $lang['i_inputuid'];?><br/><br/>
 					<div class="form-group">
 					<label for="uniid">UniID:</label>
 					<input type="text" id="uniid" name="uniid" class="form-control" placeholder="UID">
 					</div>
-					<button type="submit" class="btn btn-default">Buscar</button>
+					<button type="submit" class="btn btn-default"><?php echo $lang['i_buttonsend'];?></button>
 					<br/>
 
 				</form>

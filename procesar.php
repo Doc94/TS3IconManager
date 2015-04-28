@@ -6,6 +6,7 @@
 *************************************************
 */
 include './data/config.php'; //Importamos la configuracion
+include './lang/loadlang.php';
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -33,7 +34,7 @@ include './data/config.php'; //Importamos la configuracion
 			<center>
 			<div class="panel panel-primary" style="width: 600px;">
 				<div class="panel-heading">
-					<h3 class="panel-title" style="height: 16px;">Panel de iconos | TS3</h3>
+					<h3 class="panel-title" style="height: 16px;"><?php echo $lang['i_title'];?></h3>
 				</div>
 				<div class="panel-body" style="width: 550px;" align=left>
 					<?php include './modulos/listador.php'; //Importamos el codigo a usar ?>
@@ -47,6 +48,7 @@ include './data/config.php'; //Importamos la configuracion
 <script>
 var maxicon = "<?php echo $MAX_ICONS; ?>" ;
 var icons = "<?php echo $iconosm; ?>" ;
+var msgerror = "<?php echo $lang['f_maxicons']; ?>" ;
 
 $(document).ready(function () {
     //set initial state.
@@ -55,7 +57,7 @@ $(document).ready(function () {
 		var id = $(this).prop('id');
         if ($(this).is(":checked")) {
             if (icons == maxicon) {
-                var n = noty({text: 'Has superado el limite de iconos a seleccionar', type: 'error', layout: 'topCenter'});
+                var n = noty({text: msgerror, type: 'error', layout: 'topCenter'});
 				//alert("Maximo");
                 $(this).prop('checked', false);
 
