@@ -1,7 +1,4 @@
 <?PHP
-/*
-Author: Unk
-*/
 $lang = array();
  
 $lang['i_inputuid'] = "Wpisz swoje ID (Unique ID) z serwera .";
@@ -23,15 +20,15 @@ $lang['f_unk'] = "Nieznany błąd lub zła metoda";
 $lang['f_msgfailcode'] = "Podany kod nie pasuje";
 $lang['f_msgemptysave'] = "Brak zmian do zrobienia";
  
-$lang['load'] = "Przetwarzanie systemu...";
+$lang['load'] = "Ładowanie...";
  
-$lang['l_idt'] = "Uzyskano ID";
+$lang['l_idt'] = "Twoje ID";
 $lang['l_lastname'] = "Nazwa w użyciu";
 $lang['l_checkmsg'] = "To Twój kod weryfikacyjny";
 $lang['l_checkalert'] = "Wpisz na dole kod by dokończyć proces";
 $lang['l_save'] = "Zapisywanie.";
  
 $lang['i_save'] = "Zapisano";
-$lang['succes'] = "Ikony odwzorowane prawidłowo";
+$lang['succes'] = "Ikony dodano prawidłowo";
  
 ?>
