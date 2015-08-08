@@ -21,7 +21,7 @@ $NAME_TITLE = 'Manager TS3'; //Titulo principal de la web
 
 $IDIOMA = "ES"; // (Options: en, es) Idioma de ejecucion 
 
-$SID_GROUP = 71; //SORT_ID del grupo que sera listado
+$SID_GROUP = array(71,71); //SORT_ID del grupo que sera listado Example array(1,2,3,4,5)
 
 $NICK_QUERY = "AdminSystem"; //Nickname de la conexion query
 
