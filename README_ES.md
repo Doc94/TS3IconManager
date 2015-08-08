@@ -32,7 +32,7 @@ Este script tiene en la carpeta de "iconos" un archivo PHP el cual debes ejecuta
 
 -Añadido soporte para usar mas de un SortID group de TS3
 
--Añadido archivo idioma PL, Aportado por Luki (mts3.pl)
+-Añadido archivo idioma PL, Aportado por Luki
 
 [V 1.3]
 

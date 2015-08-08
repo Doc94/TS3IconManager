@@ -33,7 +33,7 @@ This script is in the folder "icons" a PHP file which should run periodically ac
 
 -Added support for using more than one group of TS3 SortID
 
--Added File language PL, Contributed by Luki (mts3.pl)
+-Added File language PL, Contributed by Luki
 
 [V 1.3]
 
