@@ -14,7 +14,12 @@ This little script uses Bootstrap and TS3PHP Framework, this script allows to as
 
 -Record Changes (still not ...)
 
--System Languages
+-System Languages (ES,EN,PL)
+
+#Requisites
+-Support PHP5
+-WebHost whit socket connection (Recommend Linux WebHost)
+
 
 # Installation
 You just have to edit the file (data / config.php) to use the script without any problem.
@@ -23,6 +28,13 @@ You just have to edit the file (data / config.php) to use the script without any
 This script is in the folder "icons" a PHP file which should run periodically according to editing one or another range as to save resources and to avoid a possible "Banned From Query" icons are not automatically downloaded unless run every so often the geticonos.php file
 
 # Changelog
+[V 1.4]
+-Now the footer shows the version of the script based on a new parameter in config.php file (Using Dev)
+
+-Added support for using more than one group of TS3 SortID
+
+-Added File language PL, Contributed by Luki (mts3.pl)
+
 [V 1.3]
 
 -Fixed File (./icons/geticonos.php) which had an error reading configuration file.

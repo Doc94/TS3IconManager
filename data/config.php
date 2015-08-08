@@ -6,6 +6,8 @@
 *************************************************
 */
  
+$SCRIPT_VER = "V1.4" //Use Only Dev
+
 /* Configuracion de conexion query hacia TS3 */
 
 $HOST_QUERY = "131.221.33.40"; //HOST:QUERY_PORT Que usa tu servidor de ts3

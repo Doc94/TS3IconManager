@@ -14,7 +14,11 @@ Este pequeño script usa Bootstrap y el Framework de TS3PHP, este script permite
 
 -Registro de los cambios realizados (Aun No...)
 
--Sistema de idiomas (ES,EN)
+-Sistema de idiomas (ES,EN,PL)
+
+#Requisites
+-Soporte para PHP Version 5 o superior
+-WebHost con soporte a conexiones por socket (Se recomienda WebHost Linux, en windows puede haber fallas)
 
 # Instalacion
 Solo debes editar el archivo (data/config.php) para poder usar el script sin ningun problema.
@@ -23,6 +27,13 @@ Solo debes editar el archivo (data/config.php) para poder usar el script sin nin
 Este script tiene en la carpeta de "iconos" un archivo PHP el cual debes ejecutar periodicamente segun edites uno u otro rango ya que para ahorrar recursos y para evitar un posible "Banned From Query" los iconos no se descargan automaticamente a menos que se ejecute cada cierto tiempo el archivo geticonos.php
 
 # Changelog
+[V 1.4]
+-Ahora los footer muestran la version del script en base a un nuevo parametro en el archivo config.php (Uso del Dev)
+
+-Añadido soporte para usar mas de un SortID group de TS3
+
+-Añadido archivo idioma PL, Aportado por Luki (mts3.pl)
+
 [V 1.3]
 
 -Arreglado en archivo (./icons/geticonos.php) el cual tenia un error de lectura del archivo de configuracion.
