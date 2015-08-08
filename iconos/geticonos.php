@@ -12,7 +12,7 @@
 	$servergroups = array();
     foreach($server_groups as $group) {
         if($group->type != 1) { continue; }
-        if($group["sortid"] == $SID_GROUP) {
+        if(in_array($group["sortid"], $SID_GROUP)) {
         $servergroups[] = array('name' => (string)$group, 'id' => $group->sgid, 'type' => $group->type, 'icon' => $group->iconDownload() );
         }
     }  

@@ -30,7 +30,7 @@ include './lang/loadlang.php';
 		<center>
 		<div class="panel panel-primary" style="width: 300px;">
 			<div class="panel-heading">
-				<h3 class="panel-title" style="height: 16px;">$lang['i_title']</h3>
+				<h3 class="panel-title" style="height: 16px;"><?php echo $lang['i_title'] ?></h3>
 			</div>
 			<div class="panel-body" style="width: 300px;">
 				<?php include './modulos/iconizador.php'; //Importamos el codigo a usar ?>
