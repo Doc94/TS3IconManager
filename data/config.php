@@ -6,7 +6,7 @@
 *************************************************
 */
  
-$SCRIPT_VER = "V1.4" //Use Only Dev
+$SCRIPT_VER = "V1.4"; //Use Only Dev
 
 /* Configuracion de conexion query hacia TS3 */
 
