@@ -19,6 +19,7 @@ $lang['f_dcode'] = "Błąd kodu";
 $lang['f_unk'] = "Nieznany błąd lub zła metoda";
 $lang['f_msgfailcode'] = "Podany kod nie pasuje";
 $lang['f_msgemptysave'] = "Brak zmian do zrobienia";
+$lang['f_msgovermaxicons'] = "You have exceeded the maximum number of icons";
  
 $lang['load'] = "Ładowanie...";
  
