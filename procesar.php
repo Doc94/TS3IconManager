@@ -64,12 +64,15 @@ $(document).ready(function () {
             } else {
                 icons++;
 				<?php 
-					//$grupos_in[] = array('id' => echo "id";);
+					$_SESSION['numiconos'] += 1;
 				?>
             }
 
         } else {
             icons--;
+            			<?php 
+					$_SESSION['numiconos'] -= 1;
+				?>
         }
         //$('.txt').val(icons);
     });
