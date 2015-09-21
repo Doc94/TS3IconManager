@@ -14,6 +14,7 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
 		$client_db = $_SESSION['client_db'];
 		$codigo = $_SESSION['codigo'];
 		$i_code = $_POST["i_code"];
+		$numicons = $_SESSION['numiconos'];
        
     try {
         
@@ -26,7 +27,11 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
 		echo $lang['l_lastname'].": ".$client["client_nickname"]."<br>";
         echo $lang['load']."<br/><br/>";
 		
-        
+        	if(isset($numicons) || $numicons > $MAX_ICONS) {
+        		echo "<p><b>".$lang['f_msgovermaxicons'].".</b></p><br/>";
+			header("refresh: 10; url = ./"); 
+			die;	
+        	}
 		if(empty($_POST["grupos"])) {
 			echo "<p><b>".$lang['f_msgemptysave'].".</b></p><br/>";
 			header("refresh: 10; url = ./"); 
