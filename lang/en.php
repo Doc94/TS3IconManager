@@ -19,6 +19,7 @@ $lang['f_dcode'] = "The error code is";
 $lang['f_unk'] = "Unknown error or invalid method";
 $lang['f_msgfailcode'] = "The code entered does not match";
 $lang['f_msgemptysave'] = "No changes to do";
+$lang['f_msgovermaxicons'] = "You have exceeded the maximum number of icons";
 
 $lang['load'] = "Processing system...";
 
