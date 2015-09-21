@@ -19,6 +19,7 @@ $lang['f_dcode'] = "El codigo de error es";
 $lang['f_unk'] = "Error desconocido o Metodo invalido";
 $lang['f_msgfailcode'] = "El codigo ingresado no corresponde";
 $lang['f_msgemptysave'] = "No hay cambios que hacer";
+$lang['f_msgovermaxicons'] = "Has superado la cantidad maxima de iconos";
 
 $lang['load'] = "Procesando sistema...";
 
