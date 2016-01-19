@@ -74,8 +74,9 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
                     echo '<li><img src="./iconos/icons/'. $group['id'] . '.png" alt="" />  ';
                     echo '<label><input type=checkbox name=grupos['.$group["id"].'] id="'. $group["id"] .'" value="'. $group["id"] .'" class="icono"> '.$group["name"].'</label><br>';
                 }
-                //$_SESSION['numiconos'] = $iconosm;
+                
             }
+			$_SESSION['numiconos'] = $iconosm;
 			$codigo = RandomString();
 			$_SESSION['codigo'] = $codigo;
 			$mensaje = $lang['l_checkmsg'].": ".$codigo." ";

@@ -27,7 +27,8 @@ require_once("libraries/TeamSpeak3/TeamSpeak3.php"); //Libreria del FRAMEWORK TS
 		echo $lang['l_lastname'].": ".$client["client_nickname"]."<br>";
         echo $lang['load']."<br/><br/>";
 		
-        	if(isset($numicons) || $numicons > $MAX_ICONS) {
+        	if(!isset($numicons) || $numicons > $MAX_ICONS) {
+				echo "<p><b>".$numicons.".</b></p><br/>";
         		echo "<p><b>".$lang['f_msgovermaxicons'].".</b></p><br/>";
 			header("refresh: 10; url = ./"); 
 			die;	
