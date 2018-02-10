@@ -22,7 +22,6 @@ $lang['f_msgemptysave'] = "No changes to do";
 
 $lang['load'] = "Processing system...";
 
-$lang['l_idt'] = "Obtained ID";
 $lang['l_lastname'] = "Last name used";
 $lang['l_checkmsg'] = "This is your verification code";
 $lang['l_checkalert'] = "It has generated a confirmation code via TS3 Please login to authorize the process";

@@ -22,13 +22,12 @@ $lang['f_msgemptysave'] = "No hay cambios que hacer";
 
 $lang['load'] = "Procesando sistema...";
 
-$lang['l_idt'] = "ID Obtenida";
 $lang['l_lastname'] = "Ultimo nombre usado";
 $lang['l_checkmsg'] = "Este es tu codigo de verificacion";
 $lang['l_checkalert'] = "Se ha generado un codigo de confirmacion via TS3 favor ingresar para autorizar el proceso";
 $lang['l_save'] = "Guardar";
 
 $lang['i_save'] = "Guardar";
-$lang['succes'] = "Iconos asignados correctamente";
+$lang['succes'] = "Iconos modificados correctamente";
 
 ?>

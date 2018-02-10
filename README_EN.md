@@ -12,7 +12,7 @@ This little script uses Bootstrap and TS3PHP Framework, this script allows to as
 
 -Assigning Clean and saving resources of the connection query
 
--Record Changes (still not ...)
+-Record Changes (Soon)
 
 -System Languages (ES,EN,PL)
 
@@ -64,3 +64,7 @@ Below the permissions that you must have the account used in the query connectio
 
 -i_client_poke_power || Poder para enviar poke
 
+License
+----
+
+MIT
