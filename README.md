@@ -1,5 +1,5 @@
 ## TS3IconManager
-English Version of this file [here](./blob/master/README_EN.md)
+English Version of this file [here](./README_EN.md)
 
 Manejo de rangos de servidor TeamSpeak3 mediande UID
 
